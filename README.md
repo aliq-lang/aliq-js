@@ -1,6 +1,5 @@
-
-# aliq-ts
-ALIQ (Abstract Language Integrated Query) for TypeScript
+# ALIQ-JS
+ALIQ (Abstract Language Integrated Query) for JavaScript and TypeScript
 
 ## Operations
 
