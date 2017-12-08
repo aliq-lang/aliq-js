@@ -29,7 +29,7 @@ export interface Product<T, A, B> {
 
 export interface Merge<T> {
     readonly type: "merge"
-    readonly input: Bag<T>[]
+    readonly inputs: Bag<T>[]
 }
 
 export type Bag<T>
@@ -82,6 +82,6 @@ export function product<T, A, B>(inputA: Bag<A>, inputB: Bag<B>, func: (a: A, b:
 export function merge<T>(input: Bag<T>[]) : Merge<T> {
     return {
         type: "merge",
-        input: input
+        inputs: input
     }
 }

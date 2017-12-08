@@ -1,6 +1,6 @@
 {
   "name": "aliq",
-  "version": "0.0.2",
+  "version": "0.0.3s",
   "description": "ALIQ (Abstract Language Integrated Query) for JavaScript and TypeScript",
   "main": "index.js",
   "scripts": {
