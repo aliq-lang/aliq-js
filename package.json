@@ -1,6 +1,6 @@
 {
   "name": "aliq",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "description": "ALIQ (Abstract Language Integrated Query) for JavaScript and TypeScript",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,8 @@
     "url": "https://github.com/aliq-lang/aliq-js/issues"
   },
   "homepage": "https://github.com/aliq-lang/aliq-js#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "typescript": "^2.6.2"
   }
 }
