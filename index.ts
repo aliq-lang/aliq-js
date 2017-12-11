@@ -13,11 +13,11 @@ export interface FlatMap<T, I> {
     readonly func: (i: I) => Iterable<T>
 }
 
-export interface GroupBy<T, K, V> {
+export interface GroupBy<T, I> {
     readonly type: "groupBy"
-    readonly input: Bag<[K, V]>
-    readonly reduce: (a: V, b: V) => V
-    readonly flatMap: (v: [K, V]) => Iterable<T>
+    readonly input: Bag<[string, I]>
+    readonly reduce: (a: I, b: I) => I
+    readonly flatMap: (v: [string, I]) => Iterable<T>
 }
 
 export interface Product<T, A, B> {
@@ -36,7 +36,7 @@ export type Bag<T>
     = Const<T>
     | ExternalInput<T>
     | FlatMap<T, any>
-    | GroupBy<T, any, any>
+    | GroupBy<T, any>
     | Product<T, any, any>
     | Merge<T>
 
@@ -59,9 +59,9 @@ export function flatMap<T, I>(input: Bag<I>, func: (v: I) => Iterable<T>) : Flat
     }
 }
 
-export function groupBy<T, K, V>(
-    input: Bag<[K, V]>, reduce: (a: V, b: V) => V, flatMap: (v: [K, V]) => Iterable<T>)
-    : GroupBy<T, K, V> {
+export function groupBy<T, I>(
+    input: Bag<[string, I]>, reduce: (a: I, b: I) => I, flatMap: (v: [string, I]) => Iterable<T>)
+    : GroupBy<T, I> {
     return {
         type: "groupBy",
         input: input,
